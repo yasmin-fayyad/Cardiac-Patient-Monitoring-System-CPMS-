@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/images/logo.png">
     <style>
         .cairo {
             font-family: "Cairo", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
         }
     </style>
 </head>
@@ -26,31 +23,124 @@
 
         <div class="flex-1 flex flex-col">
             <div id="header"></div>
-
             <main class="flex-1 p-4 sm:p-8">
-                <!-- Header Actions -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-                    <div>
-                        <h1 class="text-2xl font-bold">Scheduled Appointments</h1>
-                        <p class="text-sm text-gray-500 mt-2">Manage and schedule all patient visits</p>
+                <div class="mb-6">
+                    <span class="text-sm font-semibold text-teal-700">Specialized Heart Hospital</span>
+                    <h1 class="text-3xl font-extrabold text-slate-900 mt-1">Appointments</h1>
+                    <p class="text-sm text-gray-500 mt-1">Create appointments, filter records, and track patient care
+                        schedules.</p>
+                </div>
+                <div class="relative rounded-2xl bg-white p-6 shadow-sm border border-slate-100 mb-8">
+                    <div class="absolute top-6 right-6">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-xs font-bold">Add Mode</span>
                     </div>
+
+                    <div class="mb-6">
+                        <h2 class="text-xl font-bold text-slate-800">Appointment Form</h2>
+                        <p class="text-xs text-gray-400 mt-1">Appointments are saved and updated directly within the
+                            care schedule.</p>
+                    </div>
+
+                    <form id="appointmentForm" class="space-y-4">
+                        <div class="grid grid-cols-1 gap-4 md:grid-cols-4">
+
+                            <div>
+                                <label class="mb-1 block text-xs font-semibold text-slate-600">Patient</label>
+                                <select id="appointmentPatient"
+                                    class="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50/50">
+                                    <option value="">Select Patient</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="mb-1 block text-xs font-semibold text-slate-600">Date</label>
+                                <input type="date" id="appointmentDate"
+                                    class="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50/50">
+                            </div>
+
+                            <div>
+                                <label class="mb-1 block text-xs font-semibold text-slate-600">Time</label>
+                                <input type="time" id="appointmentTime"
+                                    class="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50/50">
+                            </div>
+
+                            <div>
+                                <label class="mb-1 block text-xs font-semibold text-slate-600">Status</label>
+                                <select id="appointmentStatus"
+                                    class="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50/50">
+                                    <option value="Scheduled">Scheduled</option>
+                                    <option value="Completed">Completed</option>
+                                    <option value="Urgent">Urgent</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label class="mb-1 block text-xs font-semibold text-slate-600">Reason</label>
+                            <input type="text" id="appointmentReason" placeholder="Reason for appointment"
+                                class="w-full rounded-xl border border-slate-200 p-2.5 text-sm outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50/50">
+                        </div>
+                        <div class="flex justify-end pt-2">
+                            <button type="button" id="cancelEdit"
+                                class="hidden mr-3 rounded-xl bg-gray-200 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-300">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                class="flex items-center gap-2 rounded-xl bg-teal-700 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-teal-800">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                                Save Appointment
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
 
-                <!-- Appointments Table -->
+                <div class="rounded-2xl bg-white p-5 shadow-sm border border-slate-100 mb-6">
+                    <h2 class="mb-4 text-lg font-bold text-slate-800">Search & Filter Appointments</h2>
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+                        <div>
+                            <label class="mb-1 block text-sm font-medium text-slate-600">Search Patient</label>
+                            <input type="text" id="appointmentSearch" placeholder="Search by patient name"
+                                class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-teal-400">
+                        </div>
+                        <div>
+                            <label class="mb-1 block text-sm font-medium text-slate-600">Status</label>
+                            <select id="statusFilter"
+                                class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-teal-400">
+                                <option value="All">All Status</option>
+                                <option value="Scheduled">Scheduled</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Urgent">Urgent</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="mb-1 block text-sm font-medium text-slate-600">Appointment Date</label>
+                            <input type="date" id="dateFilter"
+                                class="w-full rounded-lg border border-slate-300 p-2.5 outline-none focus:ring-2 focus:ring-teal-400">
+                        </div>
+                    </div>
+                </div>
                 <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left">
                             <thead class="bg-gray-50 border-b border-gray-200">
                                 <tr>
-                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Patient Name</th>
-                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Date</th>
-                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Time</th>
-                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Reason for Visit</th>
-                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Status</th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Patient
+                                        Name</th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Date
+                                    </th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Time
+                                    </th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Reason
+                                        for Visit</th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Status
+                                    </th>
+                                    <th class="px-6 py-4 font-semibold text-gray-600 text-sm whitespace-nowrap">Actions
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody id="appointments-table-body" class="divide-y divide-gray-100">
-                                <!-- Dynamic content -->
                             </tbody>
                         </table>
                     </div>
@@ -58,7 +148,6 @@
             </main>
         </div>
     </div>
-
     <script src="../JS/components.js"></script>
     <script src="../JS/appointments.js"></script>
 </body>

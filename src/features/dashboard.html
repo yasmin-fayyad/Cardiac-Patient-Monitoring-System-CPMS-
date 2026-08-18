@@ -1,408 +1,321 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard || Cardiac Patient Monitoring System</title>
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <title>Dashboard || Specialized Heart Hospital</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="../../assets/images/logo.png">
     <style>
         .cairo {
             font-family: "Cairo", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
         }
     </style>
-
 </head>
 
-
-<body class="cairo bg-[#fcfbf9]">
-
+<body class="cairo bg-[#fcfbf9] text-gray-800">
+    <!-- هون الجزء الرئيسي للصفحة، خليت الـ Navbar جنب المحتوى -->
     <div class="min-h-screen flex flex-col lg:flex-row">
-        <div id="navbar"></div>
+        <aside class="w-full lg:w-64 bg-white border-r border-gray-200 flex flex-col justify-between p-4 shrink-0">
+            <div>
+                <div class="flex items-center gap-3 p-3 mb-6">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold shadow-md">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-black text-gray-800 text-base leading-tight">Specialized Heart Hospital</h2>
+                        <p class="text-xs text-gray-400">Patient Care Portal</p>
+                    </div>
+                </div>
+                <nav class="space-y-1">
+                    <a href="dashboard.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-50 text-emerald-700 font-bold text-sm transition-all">
+                        <i class="fa-solid fa-table-cells-large text-base"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="patients.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 font-semibold text-sm transition-all">
+                        <i class="fa-solid fa-user-group text-base"></i>
+                        <span>Patients</span>
+                    </a>
+                    <a href="vitals.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 font-semibold text-sm transition-all">
+                        <i class="fa-solid fa-wave-square text-base"></i>
+                        <span>Vitals</span>
+                    </a>
+                    <a href="appointments.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 font-semibold text-sm transition-all">
+                        <i class="fa-solid fa-calendar-check text-base"></i>
+                        <span>Appointments</span>
+                    </a>
+                    <a href="reports.html"
+                        class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-gray-50 hover:text-emerald-600 font-semibold text-sm transition-all">
+                        <i class="fa-solid fa-chart-line text-base"></i>
+                        <span>Reports</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="pt-4 border-t border-gray-100">
+                <a href="../../index.html"
+                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-bold text-sm transition-all">
+                    <i class="fa-solid fa-right-from-bracket text-base"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
 
         <div class="flex-1 flex flex-col">
 
-            <div id="header"></div>
-
-            <main class="flex-1 p-4 sm:p-8">
-
-                <!-- Dashboard content -->
-                <section  class="py-8 flex items-center justify-center">
-                    <div id="welcome-banner" class="text-center">
-                        <h1 class="text-4xl font-black text-gray-800 tracking-tight">
-                            Welcome back, Dr. Islam Zaid
-                        </h1>
-                    </div>
-                </section>
-
-                <section>
-
-                    <div id="overview-heading" class="text-center mb-6">
-                        <p class="text-lg text-gray-500 font-medium">
-                            Overview of patient status and statistics
-                        </p>
-                    </div>
-
-                    <div id="stats-cards" class="flex flex-wrap justify-center items-center gap-6 w-full mb-10">
-
-                        <!-- Critical Cases statistics card -->
-                        <a href="#critical-cases-section" class="stat-card  w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
-                  px-4 sm:px-5 flex items-center justify-between shadow-sm
-                  hover:bg-red-50 hover:text-red-700 hover:-translate-y-1 hover:shadow-md
-                  transition-all duration-500 group">
-
-                                <div class="w-12 h-12 rounded-lg bg-red-50 text-red-600
-                     flex items-center justify-center shrink-0 shadow-sm">
-                                    <i class="fa-solid fa-triangle-exclamation text-xl"></i>
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-400">Critical Cases</p>
-                                    <p id="stat-critical" class="text-2xl font-black text-gray-800 leading-tight">...</p>
-                                </div>
-                            </a>
-
-                            <a href="patients.html" class="stat-card w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
-                  px-4 sm:px-5 flex items-center justify-between shadow-sm
-                  hover:bg-emerald-50 hover:text-emerald-700 hover:-translate-y-1 hover:shadow-md
-                  transition-all duration-500 group" style="transition-delay: 100ms;">
-
-                                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600
-                    flex items-center justify-center shrink-0 shadow-sm">
-                                    <i class="fa-solid fa-user-group text-xl"></i>
-                                </div>
-
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-400">Patients</p>
-                                    <p id="stat-patients" class="text-2xl font-black text-gray-800 leading-tight">...</p>
-                                </div>
-                            </a>
-
-
-                            <a href="vitals.html" class="stat-card  w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
-                  px-4 sm:px-5 flex items-center justify-between shadow-sm
-                  hover:bg-emerald-50 hover:text-emerald-700 hover:-translate-y-1 hover:shadow-md
-                  transition-all duration-500 group" style="transition-delay: 200ms;">
-
-                                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600
-                    flex items-center justify-center shrink-0 shadow-sm">
-                                    <i class="fa-solid fa-heart-pulse text-xl"></i>
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-400">Vitals</p>
-                                    <p id="stat-vitals" class="text-2xl font-black text-gray-800 leading-tight">...</p>
-                                </div>
-                            </a>
-
-
-                            <a href="appointments.html" class="stat-card  w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
-                  px-4 sm:px-5 flex items-center justify-between shadow-sm
-                  hover:bg-emerald-50 hover:text-emerald-700 hover:-translate-y-1 hover:shadow-md
-                  transition-all duration-500 group" style="transition-delay: 300ms;">
-
-                                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600
-                    flex items-center justify-center shrink-0 shadow-sm">
-                                    <i class="fa-solid fa-calendar-days text-xl"></i>
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-400">Appointments</p>
-                                    <p id="stat-appointments" class="text-2xl font-black text-gray-800 leading-tight">...</p>
-                                </div>
-                            </a>
-
-
-                            <a href="reports.html" class="stat-card  w-40 sm:w-44 lg:w-48 h-24 sm:h-28 bg-white border border-gray-200 rounded-xl
-                  px-4 sm:px-5 flex items-center justify-between shadow-sm
-                  hover:bg-emerald-50 hover:text-emerald-700 hover:-translate-y-1 hover:shadow-md
-                  transition-all duration-500 group" style="transition-delay: 400ms;">
-
-                                <div class="w-12 h-12 rounded-lg bg-emerald-50 text-emerald-600
-                    flex items-center justify-center shrink-0 shadow-sm">
-                                    <i class="fa-solid fa-chart-column text-xl"></i>
-                                </div>
-                                <div class="text-left">
-                                    <p class="text-sm text-gray-400">Reports</p>
-                                    <p id="stat-reports" class="text-2xl font-black text-gray-800 leading-tight">...</p>
-                                </div>
-                            </a>
-
-                    </div>
-
-                </section>
-
-                <!-- Red Divider Section: Add Critical Patient -->
-                <section class="-mx-4 sm:-mx-8 mt-40 mb-10">
-                    <div class="bg-red-700 overflow-hidden">
-                        <div class="p-6 sm:p-8 sm:px-8 lg:px-12">
-                            <div class="flex items-center gap-3 mb-1">
-                                <div class="w-10 h-10 rounded-lg bg-white/15 text-white flex items-center justify-center shrink-0">
-                                    <i class="fa-solid fa-triangle-exclamation text-lg"></i>
-                                </div>
-                                <h2 class="text-xl sm:text-2xl font-black text-white">
-                                    Add New Critical Case
-                                </h2>
-                            </div>
-                            <p class="text-sm text-red-100 mb-6">Enter the new patient's details to register them on the list immediately</p>
-
-                            <form id="add-critical-form" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                                <div class="lg:col-span-2">
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Patient Name</label>
-                                    <input type="text" id="patient-name" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="Full name">
-                                </div>
-                                <div>
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Age</label>
-                                    <input type="number" id="patient-age" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="60">
-                                </div>
-                                <div>
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Gender</label>
-                                    <select id="patient-gender"
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white focus:outline-none focus:border-white focus:bg-white/15">
-                                        <option value="Male" class="text-gray-800">Male</option>
-                                        <option value="Female" class="text-gray-800">Female</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Heart Rate
-                                        (bpm)</label>
-                                    <input type="number" id="patient-heart" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="110">
-                                </div>
-                                <div>
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Oxygen Level
-                                        (%)</label>
-                                    <input type="number" id="patient-oxygen" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="90">
-                                </div>
-                                <div class="lg:col-span-2">
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Diagnosis</label>
-                                    <input type="text" id="patient-diagnosis" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="e.g. Acute Angina">
-                                </div>
-                                <div>
-                                    <label class="block text-[15px] font-semibold text-white mb-1">Phone Number</label>
-                                    <input type="text" id="patient-phone" required
-                                        class="w-full text-sm border border-white/20 rounded-lg px-3 py-1.5 bg-white/10 text-white placeholder-red-200 focus:outline-none focus:border-white focus:bg-white/15"
-                                        placeholder="0599000000">
-                                </div>
-                                <div class="sm:col-span-2 lg:col-span-4">
-                                    <button type="submit"
-                                        class="w-full bg-white hover:bg-red-50 text-red-700 font-bold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
-                                        <i class="fa-solid fa-plus text-sm"></i>
-                                        Add As Critical Case
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </section>
-
-                <div class="bg-white border border-gray-200 rounded-xl p-5 flex flex-col justify-between mb-6">
-                    <div>
-                        <div class="flex items-center justify-between mb-2">
-                            <h2 class="text-lg font-bold text-gray-800 border-l-4 border-emerald-500 pl-2">
-                                Upcoming Appointments
-                            </h2>
-                            <div class="text-sm font-bold text-emerald-600" id="calendar-month-year">
-                                August 2026
-                            </div>
-                        </div>
-                        <p class="text-xs text-gray-400 mb-4">Browse patient visit appointments. Hover over a
-                            highlighted day for the appointment details.</p>
-                    </div>
-
-                    <div class="w-full">
-                        <div
-                            class="grid grid-cols-7 gap-1 text-center font-bold text-xs text-gray-500 mb-2 border-b border-gray-200 pb-2">
-                            <div>Sun</div>
-                            <div>Mon</div>
-                            <div>Tue</div>
-                            <div>Wed</div>
-                            <div>Thu</div>
-                            <div>Fri</div>
-                            <div>Sat</div>
-                        </div>
-                        <div id="calendar-days-grid"
-                            class="grid grid-cols-7 gap-1 text-center text-sm font-semibold">
-                            <!--fill it from js-->
-                        </div>
-                    </div>
-
-                    <div class="mt-4 p-3 bg-emerald-50 border border-emerald-100 rounded-lg flex items-center gap-3">
-                        <div
-                            class="w-8 h-8 bg-emerald-600/10 text-emerald-600 rounded-lg flex items-center justify-center text-base shrink-0">
-                            <i class="fa-regular fa-calendar-check"></i>
-                        </div>
-                        <div class="text-[11px] text-emerald-700 font-medium" id="hover-appointment-details">
-                            Hover over any highlighted date with a dot to see the patient's appointment details here.
-                        </div>
-                    </div>
+            <header class="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h1 class="text-sm font-bold text-gray-700">Specialized Heart Hospital</h1>
+                    <p class="text-xs text-gray-400">Patient Care Portal</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-                    <div id="critical-cases-section" class="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col scroll-mt-24">
-                        <div class="p-5 border-b border-gray-200 flex items-center justify-between">
-                            <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
-                                Current Critical Cases
-                            </h2>
-                            <a href="vitals.html" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700">View
-                                All</a>
-                        </div>
-                        <div class="overflow-x-auto flex-1">
-                            <table class="w-full text-xs text-left">
-                                <thead class="bg-gray-50 border-b border-gray-100">
-                                    <tr>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Name</th>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Heart Rate /
-                                            Oxygen</th>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Diagnosis</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="critical-patients-small-body" class="divide-y divide-gray-100">
-                                    <!--filled from js-->
-                                </tbody>
-                            </table>
+                <div class="flex items-center gap-4 relative">
+                    <div class="relative">
+                        <button id="notif-btn"
+                            class="p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors cursor-pointer focus:outline-none">
+                            <i class="fa-regular fa-bell text-lg"></i>
+                            <span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-red-500"></span>
+                        </button>
+
+                        <div id="notif-dropdown"
+                            class="hidden absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-2xl shadow-lg p-4 z-50">
+                            <h4 class="text-xs font-bold text-gray-700 mb-2 border-b border-gray-100 pb-2">Notifications
+                            </h4>
+                            <div class="space-y-2 text-xs">
+                                <div class="p-2 bg-red-50 rounded-lg text-red-700 font-medium">
+                                    Critical Vitals Alert: Omar Nabulsi
+                                </div>
+                                <div class="p-2 bg-gray-50 rounded-lg text-gray-600">
+                                    New appointment assigned for tomorrow
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col">
-                        <div class="p-5 border-b border-gray-200 flex items-center justify-between">
-                            <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                                Recently Added Patients
-                            </h2>
-                            <a href="patients.html" class="text-xs font-semibold text-emerald-600 hover:text-emerald-700">View
-                                All</a>
+                    <div class="flex items-center gap-3 pr-2">
+                        <div
+                            class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-black flex items-center justify-center text-sm border border-emerald-200">
+                            SJ
                         </div>
-                        <div class="overflow-x-auto flex-1">
-                            <table class="w-full text-xs text-left">
-                                <thead class="bg-gray-50 border-b border-gray-100">
-                                    <tr>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Name</th>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Age /
-                                            Gender</th>
-                                        <th class="px-4 py-3 font-semibold text-gray-500 whitespace-nowrap">Diagnosis</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="recent-patients-small-body" class="divide-y divide-gray-100">
-                                    <!-- filled from js -->
-                                </tbody>
-                            </table>
+                        <div class="text-left">
+                            <h3 class="text-sm font-bold text-gray-800 leading-tight">Dr. Sarah Jenkins</h3>
+                            <p class="text-xs text-gray-400">Cardiologist Specialist</p>
                         </div>
                     </div>
+                    <a href="../../index.html"
+                        class="logout-action p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors flex items-center gap-1.5 text-xs font-bold"
+                        title="Logout">
+                        <i class="fa-solid fa-right-from-bracket text-sm"></i>
+                    </a>
+                </div>
+            </header>
+
+            <main class="flex-1 p-4 sm:p-8 space-y-8">
+
+                <!-- Page Header Title -->
+                <div class="text-center sm:text-left">
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Specialized Heart
+                        Hospital</span>
+                    <h1 class="text-3xl font-black text-gray-800 mt-1">Doctor Dashboard</h1>
+                    <p class="text-sm text-gray-500 mt-1">Clinical overview showing patient counts, critical cases,
+                        follow-ups, appointments, and vitals.</p>
                 </div>
 
-                <div class="bg-white border border-gray-200 rounded-xl overflow-hidden">
-                    <div class="p-5 border-b border-gray-200 flex items-center justify-between">
-                        <h2 class="text-base font-bold text-gray-800">
-                            Quick Overview of All Patients
-                        </h2>
+                <!-- Section 1: Quick Patient Care Registration Form -->
+                <section class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <h2 class="text-lg font-bold text-gray-800 mb-1">Log Patient Care Case</h2>
+                    <p class="text-xs text-gray-400 mb-4">Saving a case will send alerts to appropriate medical teams.
+                    </p>
+
+                    <form id="add-care-form" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4 items-end">
+                        <div class="lg:col-span-1">
+                            <label class="block text-xs font-bold text-gray-700 mb-1.5">Patient</label>
+                            <select id="care-patient" required
+                                class="w-full text-sm border border-gray-200 rounded-xl px-3 py-2 bg-gray-50 text-gray-800 focus:bg-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option value="">Select Patient</option>
+                                <option value="Maryam Dawood">Maryam Dawood</option>
+                                <option value="Kareem Oudeh">Kareem Oudeh</option>
+                                <option value="Mohammad Saleh">Mohammad Saleh</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1.5">Case Status</label>
+                            <select id="care-type" required
+                                class="w-full text-sm border border-gray-200 rounded-xl px-3 py-2 bg-gray-50 text-gray-800 focus:bg-white focus:outline-none focus:border-emerald-500 transition-colors">
+                                <option value="Follow-up">Follow-up</option>
+                                <option value="Critical">Critical</option>
+                                <option value="Stable">Stable</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1.5">Brief Note</label>
+                            <input type="text" id="care-note" placeholder="e.g., Needs check-up today"
+                                class="w-full text-sm border border-gray-200 rounded-xl px-3 py-2 bg-gray-50 text-gray-800 focus:bg-white focus:outline-none focus:border-emerald-500 transition-colors">
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Section 2: Top Stats Cards Grid -->
+                <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Total Patients -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                        <div>
+                            <p class="text-xs font-medium text-gray-400">Total Patients</p>
+                            <p id="stat-patients" class="text-2xl font-black text-gray-800 mt-1">10</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                    </div>
+
+                    <!-- Stable Cases -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                        <div>
+                            <p class="text-xs font-medium text-gray-400">Stable Patients</p>
+                            <p id="stat-stable" class="text-2xl font-black text-gray-800 mt-1">5</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                    </div>
+
+                    <!-- Critical Cases -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                        <div>
+                            <p class="text-xs font-medium text-gray-400">Critical Cases</p>
+                            <p id="stat-critical" class="text-2xl font-black text-gray-800 mt-1">2</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                    </div>
+
+                    <!-- Follow-up Needed -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                        <div>
+                            <p class="text-xs font-medium text-gray-400">Needs Follow-up</p>
+                            <p id="stat-followup" class="text-2xl font-black text-gray-800 mt-1">3</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Appointments -->
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-4 flex items-center justify-between shadow-sm col-span-2 sm:col-span-1">
+                        <div>
+                            <p class="text-xs font-medium text-gray-400">Appointments</p>
+                            <p id="stat-appointments" class="text-2xl font-black text-gray-800 mt-1">0</p>
+                        </div>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                            <i class="fa-regular fa-calendar font-bold"></i>
+                        </div>
+                    </div>
+                </section>
+                <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Critical Cases Section -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h2 class="font-bold text-gray-800 text-base">Critical Cases</h2>
+                                <p class="text-xs text-gray-400">Patients requiring immediate medical attention</p>
+                            </div>
+                        </div>
+                        <div id="critical-patients-list" class="space-y-3">
+                        </div>
+                    </div>
+
+                    <!-- Recent Patients Section -->
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h2 class="font-bold text-gray-800 text-base">Recent Patients</h2>
+                                <p class="text-xs text-gray-400">Latest registered clinical records</p>
+                            </div>
+                        </div>
+                        <div id="recent-patients-list" class="space-y-3">
+                        </div>
+                    </div>
+                </section>
+                <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <h2 class="font-bold text-gray-800 text-base">Upcoming Appointments</h2>
+                            <p class="text-xs text-gray-400 mb-6">Scheduled appointments</p>
+                        </div>
+                        <div class="border-2 border-dashed border-gray-100 rounded-2xl p-8 text-center my-auto">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-gray-50 text-gray-300 flex items-center justify-center mx-auto text-xl mb-2">
+                                <i class="fa-solid fa-inbox"></i>
+                            </div>
+                            <p class="text-sm font-bold text-gray-700">No Appointments</p>
+                            <p class="text-xs text-gray-400 mt-0.5">There are no matching appointments for this view.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+                        <div class="mb-4">
+                            <h2 class="font-bold text-gray-800 text-base">Patients Needing Follow-up</h2>
+                            <p class="text-xs text-gray-400">Scheduled for routine checkup</p>
+                        </div>
+                        <div id="followup-patients-list" class="space-y-3">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+                    <div class="p-5 border-b border-gray-100">
+                        <h2 class="font-bold text-gray-800 text-base">Vitals Overview</h2>
+                        <p class="text-xs text-gray-400">Latest vital sign indicators</p>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-xs text-left">
-                            <thead class="bg-gray-50 border-b border-gray-200">
+                            <thead class="bg-gray-50 border-b border-gray-100">
                                 <tr>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Name</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Age</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Gender</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Heart Rate</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Blood Pressure</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Oxygen</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Diagnosis</th>
-                                    <th class="px-5 py-3 font-bold text-gray-600 whitespace-nowrap">Condition</th>
+                                    <th class="px-5 py-3.5 font-bold text-gray-500">Patient</th>
+                                    <th class="px-5 py-3.5 font-bold text-gray-500">Heart Rate</th>
+                                    <th class="px-5 py-3.5 font-bold text-gray-500">Blood Pressure</th>
+                                    <th class="px-5 py-3.5 font-bold text-gray-500">Oxygen (SpO2)</th>
+                                    <th class="px-5 py-3.5 font-bold text-gray-500">Status</th>
                                 </tr>
                             </thead>
-                            <tbody id="overview-patients-table-body" class="divide-y divide-gray-100">
-                                <!-- from dashboard.js -->
+                            <tbody id="vitals-overview-table" class="divide-y divide-gray-100">
+                                <!-- Populated from JS -->
                             </tbody>
                         </table>
                     </div>
-                </div>
-
+                </section>
             </main>
-
-            <div id="footer"></div>
-
+            <footer id="footer"></footer>
         </div>
-
     </div>
-
-
-    <script src="../JS/components.js"></script>
     <script src="../JS/dashboard.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const statsCardsContainer = document.getElementById("stats-cards");
-            const statCards = document.querySelectorAll('.stat-card');
-            const welcomeBanner = document.getElementById("welcome-banner");
-            const overviewHeading = document.getElementById("overview-heading");
-
-            let cardsRevealed = false;
-
-            window.addEventListener("scroll", () => {
-                if (!statsCardsContainer) return;
-
-                const scrollY = window.scrollY;
-
-                if (scrollY > 80 && !cardsRevealed) {
-                    cardsRevealed = true;
-                    statsCardsContainer.classList.remove("opacity-0", "pointer-events-none");
-
-                    if (overviewHeading) {
-                        overviewHeading.classList.remove("opacity-0", "translate-y-6");
-                    }
-
-                    setTimeout(() => {
-                        statCards.forEach(card => {
-                            card.classList.remove('opacity-0', 'translate-y-6');
-                        });
-                    }, 50);
-                } else if (scrollY <= 80 && cardsRevealed) {
-                    cardsRevealed = false;
-                    statsCardsContainer.classList.add("opacity-0", "pointer-events-none");
-
-                    if (overviewHeading) {
-                        overviewHeading.classList.add("opacity-0", "translate-y-6");
-                    }
-
-                    statCards.forEach(card => {
-                        card.classList.add('opacity-0', 'translate-y-6');
-                    });
-                }
-
-                if (welcomeBanner) {
-                    if (scrollY > 40) {
-                        welcomeBanner.style.opacity = "0";
-                        welcomeBanner.style.transform = "scale(0.95) translateY(-20px)";
-                        welcomeBanner.style.pointerEvents = "none";
-                    } else {
-                        welcomeBanner.style.opacity = "1";
-                        welcomeBanner.style.transform = "scale(1) translateY(0)";
-                        welcomeBanner.style.pointerEvents = "auto";
-                    }
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
