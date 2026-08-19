@@ -5,8 +5,8 @@
     "doctorId": "1",
     "date": "2026-08-13",
     "time": "09:00",
-    "status": "Scheduled",
-    "reason": "Routine cardiac follow-up"
+    "status": "مجدول",
+    "reason": "متابعة دورية للقلب"
   },
   {
     "id": "2",
@@ -14,8 +14,8 @@
     "doctorId": "1",
     "date": "2026-08-13",
     "time": "10:30",
-    "status": "Scheduled",
-    "reason": "Arrhythmia follow-up"
+    "status": "مجدول",
+    "reason": "متابعة اضطراب نظم القلب"
   },
   {
     "id": "3",
@@ -23,8 +23,8 @@
     "doctorId": "1",
     "date": "2026-08-13",
     "time": "12:00",
-    "status": "Urgent",
-    "reason": "Chest pain assessment"
+    "status": "عاجل",
+    "reason": "تقييم ألم الصدر"
   },
   {
     "id": "4",
@@ -32,8 +32,8 @@
     "doctorId": "1",
     "date": "2026-08-14",
     "time": "09:30",
-    "status": "Scheduled",
-    "reason": "Blood pressure review"
+    "status": "مجدول",
+    "reason": "مراجعة ضغط الدم"
   },
   {
     "id": "5",
@@ -41,8 +41,8 @@
     "doctorId": "1",
     "date": "2026-08-14",
     "time": "11:00",
-    "status": "Scheduled",
-    "reason": "Heart rhythm check"
+    "status": "مجدول",
+    "reason": "فحص نظم القلب"
   },
   {
     "id": "6",
@@ -50,8 +50,8 @@
     "doctorId": "1",
     "date": "2026-08-14",
     "time": "13:00",
-    "status": "Urgent",
-    "reason": "Heart failure follow-up"
+    "status": "عاجل",
+    "reason": "متابعة قصور القلب"
   },
   {
     "id": "7",
@@ -59,8 +59,8 @@
     "doctorId": "1",
     "date": "2026-08-15",
     "time": "10:00",
-    "status": "Scheduled",
-    "reason": "Routine heart check"
+    "status": "مجدول",
+    "reason": "فحص دوري للقلب"
   },
   {
     "id": "8",
@@ -68,8 +68,8 @@
     "doctorId": "1",
     "date": "2026-08-15",
     "time": "11:30",
-    "status": "Scheduled",
-    "reason": "Coronary disease follow-up"
+    "status": "مجدول",
+    "reason": "متابعة مرض الشريان التاجي"
   },
   {
     "id": "9",
@@ -77,8 +77,8 @@
     "doctorId": "1",
     "date": "2026-08-16",
     "time": "09:00",
-    "status": "Scheduled",
-    "reason": "Blood pressure follow-up"
+    "status": "مجدول",
+    "reason": "متابعة ضغط الدم"
   },
   {
     "id": "10",
@@ -86,7 +86,7 @@
     "doctorId": "1",
     "date": "2026-08-16",
     "time": "12:30",
-    "status": "Completed",
-    "reason": "Routine cardiac check"
+    "status": "مكتمل",
+    "reason": "فحص دوري للقلب"
   }
 ]
